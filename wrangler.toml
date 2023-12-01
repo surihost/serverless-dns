@@ -29,30 +29,6 @@ WORKER_ENV = "development"
 CLOUD_PLATFORM = "cloudflare"
 
 ##################
-#------PROD------#
-##################
-# wrangler doesn't yet support Workers Services and the new "Environments"
-# github.com/cloudflare/cloudflare-docs/pull/3175/files
-# github.com/cloudflare/wrangler2/issues/27
-# developers.cloudflare.com/workers/platform/environments
-[env.prod]
-name = "basic-unbound"
-minify = true
-routes = [
-  "sky.rethinkdns.com/*",
-  "sky.bravedns.com/*",
-  "basic.rethinkdns.com/*",
-  "basic.bravedns.com/*",
-  "free.bravedns.com/*",
-]
-# vars are not inherited
-# workers/platform/environment-variables#environment-variables-via-wrangler
-[env.prod.vars]
-LOG_LEVEL = "info"
-WORKER_ENV = "production"
-CLOUD_PLATFORM = "cloudflare"
-
-##################
 #------ONE-------#
 ##################
 [env.one]
